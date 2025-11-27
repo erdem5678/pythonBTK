@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>LinGO</title>
+<style>
+   .bg-img {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* resmi kırpmadan kapla */
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  padding: 30px;
+}
+.container {
+  max-width: 600px;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  margin: auto;
+  margin-top:150px ;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 12px;
+  font-size: 16px;
+}
+button {
+  background: #03393e;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+}
+button:hover { background: #700901; }
+.link-list a{
+  display: block;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 6px;
+  margin-top: 8px;
+  text-decoration: none;
+  color: #111;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h2>Dosya arama</h2>
+<img class="bg-img" src="Kali linux Wallpaper.jpeg"alt="">   
+<label>Aranacak İsim (Dosya / Program)</label>
+<input type="text" id="query" placeholder="örnek: photoshop, autocad, word">
+
+
+<label>Dosya Türü Seç</label>
+<select id="fileType">
+  <option value="">Tür seç (İsteğe bağlı)</option>
+  <option>PDF</option>
+  <option>EXE</option>
+  <option>Aİ</option>
+  <option>Dowloand</option>
+</select>
+
+<button onclick="search()">ARA</button>
+<div class="link-list" id="results"></div>
+</div>
+
+<script>
+function search(){
+  let q = document.getElementById("query").value.trim();
+  let ext = document.getElementById("fileType").value.trim();
+
+  if(q === "") return alert("Arama boş olmaz.");
+
+  if(ext) q += " filetype:" + ext; // DAHA DİREKT SONUÇ İÇİN
+
+  let sites = [
+    ["Google", "https://www.google.com/search?q=" + encodeURIComponent(q)],
+    ["Bing", "https://www.bing.com/search?q=" + encodeURIComponent(q)],
+    ["Yandex", "https://yandex.com/search/?text=" + encodeURIComponent(q)],
+    
+    // Dosya için optimize edilmiş siteler
+    ["PDF Drive", "https://www.pdfdrive.com/search?q=" + encodeURIComponent(q)],
+    ["Softpedia (EXE)", "https://www.softpedia.com/dyn-search.php?search_term=" + encodeURIComponent(q)],
+    ["APKPure (EXE/APP)", "https://apkpure.com/search?q=" + encodeURIComponent(q)],
+    
+    // Tasarım dosyaları için
+    ["Freepik (AI)", "https://www.freepik.com/search?format=search&query=" + encodeURIComponent(q)],
+    ["Vecteezy (AI)", "https://www.vecteezy.com/free-vector/" + encodeURIComponent(q)],
+    ["GitHub", "https://github.com/search?q=" + encodeURIComponent(q)]
+  ];
+
+  let out = "";
+  sites.forEach(s => out += `<a href="${s[1]}" target="_blank">${s[0]} » ${q}</a>`);
+  document.getElementById("results").innerHTML = out;
+}
+</script>
+
+</body>
+</html>

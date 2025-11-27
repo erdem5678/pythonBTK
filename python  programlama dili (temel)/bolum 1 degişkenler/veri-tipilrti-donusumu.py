@@ -1,0 +1,15 @@
+sayi1 = int(input("1. sayiyi giriniz: "))
+sayi2 = int(input("2. sayiyi giriniz: "))
+toplam = sayi1 + sayi2
+print(toplam)
+
+x = int("10")
+x = int("10.5")
+x = int(10.5)
+x = float("10")
+x = float(10)
+x = float(10.4)
+x = str(10.2)
+x = str(True)
+print (type(x))
+print(x)

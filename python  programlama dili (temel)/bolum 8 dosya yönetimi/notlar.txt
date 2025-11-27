@@ -1,0 +1,2 @@
+barış çalıkna:70,80,90
+can çalışkan can:90,100,30
