@@ -4,6 +4,7 @@ class Question():
         self.text = text  # Sorunun kendisi (metin)
         self.choices = choices  # Cevap şıkları listesi
         self.answer = answer  # Doğru cevap
+        
     def checkanswer(self, answer):  # Verilen cevabın doğru olup olmadığını kontrol eder
         return self.answer == answer  # Doğruysa True, yanlışsa False döner
   
@@ -51,7 +52,7 @@ class Quiz:
             print('quiz bitti')  # Quiz bittiğini yaz
         else:  # Değilse
             print(f'question {questionNumber} of {totalQuestion}'.center(100,'*' ))  # "question 1 of 5" şeklinde ortada yıldızlarla göster
-            
+
 q1 = Question('en iyi programlama dili hangisidir', ['c#', 'python', 'javascript', 'java'],'python')  # 1. soruyu oluştur
 q2 = Question('en popüler programlama dili hangisidir', ['python', 'javascript', 'c#','java'],'python')  # 2. soruyu oluştur
 q3 = Question('en cok kazandiran programlama dili hangisidir', ['c#', 'javascript', 'java','python',],'python')  # 3. soruyu oluştur
