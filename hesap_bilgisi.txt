@@ -1,0 +1,11 @@
+
+Hesap bilgisi: Barış Erdem Çalışkan
+Toplam yatirim: 2000$
+Toplam cekim: 300$
+ Güncel Bakiye: 1700$
+------------------------------
+Hesap bilgisi: Ali çalışkan
+Toplam yatirim: 40000$
+Toplam cekim: 39000$
+Güncel Bakiye: 1000$
+------------------------------
