@@ -66,7 +66,7 @@ while True:
 
 
 
-    # E yazmazsa döngüden çık ve bilgileri kaydet
+    # cls yazmazsa döngüden çık ve bilgileri kaydet
     devam = input("\n başka işlem yapmak istermsiniz(cls/exit): ")
     if devam != "cls":
         account.kaydet() # Dosyaya kaydet
