@@ -1,7 +1,7 @@
 # class
 class Person:
     # class attributes
-    address = ' no information ' 
+    address = 'bakü' 
 
 
     # constuctor(yapıcı metod)
@@ -25,9 +25,9 @@ p1.address = 'kocaeli'
 # accessing object attributes
 print(f"p1 name: {p1.name} year: {p1.year} adress: {p1.address}")
 print(f"p2 name: {p2.name} year: {p2.year} adress: {p2.address}")
-print(p1)
-print(p2)
+# print(p1)
+# print(p2)
 
-print(type(p1))#<class '__main__.Person'>
-print(type(p2))#<class '__main__.Person'>
-print(p1 == p2)#False
+# print(type(p1))#<class '__main__.Person'>
+# print(type(p2))#<class '__main__.Person'>
+# print(p1 == p2)#False

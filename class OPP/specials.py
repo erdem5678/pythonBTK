@@ -26,18 +26,19 @@ class movie():
         self.director = director
         self.duration = duration
         print('movie objesi oluşturuldu')
-    def __str__(self):
+    def __str__(self):# str metodu, bir nesneyi insanların okuyabileceği şekilde string'e (metne) dönüştürmek için kullanılır.
         return f"{self.title} by {self.director}"
     
-    def __len__(self):
+    def __len__(self):# len() fonksiyonu ile filmin süresini döndür
         return self.duration
     
-    def __del__(self):
+    def __del__(self): # Nesne silindiğinde çalışacak metod
         print('filim  objesi silindi')
-    
+
+# Movie sınıfından bir nesne oluştur
 m = movie('filim adi', 'yönetmen adi', 120)
 
-# print(str(mylisty))
+print(str(mylisty))
 print(str(m))
-# print(len(mylisty))
-# print(len(m))
+print(len(mylisty))
+print(len(m))
