@@ -30,7 +30,7 @@ class BankAccount:
             print(f"yetersz bakiye mevcut baliye : {self.balance} $")
             return   
         
-
+# 
 # Bakiyeden para çıkar
         self.balance -= miktar
         self.cekilen_toplam += miktar
