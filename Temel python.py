@@ -544,7 +544,11 @@ print("cikarma:",cikarma(a,b))
 elveda = lambda: print(" ❤️ ❤️ ❤️ görüşmek üzere ❤️ ❤️ ❤️ ")
 elveda()
 
-
-
+sayi = int(input("bir sayi giriniz: "))
+while sayi <= 100:
+    print(sayi, end=" ")
+    sayi += 1
+    
+ 
 
 
