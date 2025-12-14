@@ -243,7 +243,7 @@ print(liste)
 print('ali'in liste)
 
 
-print("\n----restoran(loop) ----\n")
+# print("\n----restoran(loop) ----\n")
 tabelNo = 0
 liste = {
     "ali": 5,
@@ -324,3 +324,227 @@ for a in range (1,11):
     for b in range (1,11):
         print(a, "*" ,b, "=", a*b)
     print("\n")
+
+numbers = [1,2,3,4,5]
+squared_evens = list(map(lambda x: x**2, filter(lambda x: x % 2 == 0, numbers)))
+print(squared_evens) #[4, 16, 36, 64, 100]
+
+
+print("\n******fonksiyonlar*****\n")
+# paremetre : these arer the value we want to be used within a function while that functions is running (bir fonksiyon içinde kullanılmasını isdedigimiz degerlerdir )
+print("can")
+
+A = 100
+print(A)
+
+input()
+def toplama (): 
+    print("addition is the process of adding two or more numbers")
+    print("for example" ,5, "+" ,7, "=", 13)
+toplama()
+
+print("\n****** for examaples*****\n")
+def selamlama (name):
+
+    print("Dear",name,"welccome to our restaurant")
+reservation = []
+max_kişi = 5
+while True:
+    if len(reservation) == (max_kişi):
+        print("The restaurant if full. We are not accepting any more guests.we apologize :( ")
+        break
+
+    Ad = input("Enter your name: ")
+    time = int(input("At what time do you want to come?: "))
+    selamlama(Ad)
+
+    # if (Ad == "exit"):
+        # break
+
+    reservation.append(Ad)
+    reservation.append(time)
+    print("Guest list:", reservation)
+
+
+def selamlama (name):
+    print("dear",name, "welcome to our restaurant")
+reservations = {}
+max_person = 5
+
+while True:
+    if len(reservations) == max_person:
+        print("The restaurant id full.no more guests.")
+        break
+
+    name = input("Enter your name: ")
+    if name in reservations:
+        print("This name already has a reservation.")
+        continue
+    
+    time = int(input("At what time do you want to come: "))
+    if time in reservations:
+        print("This time already full. Choose another time.")
+        continue
+    reservations[name] = time
+    selamlama(name)
+    print("Guest list:", reservations)
+
+print("\n*************return fonksiyonu***************\n")
+
+# alan = uzunnluk * genişlik
+# cevre = (uzunluk + genişlik) * 2
+# alan = u * g
+
+def alan (u,g):
+    A = u * g 
+    return A
+def cevre (u ,g ):
+    C = 2 * (u + g)
+    return C
+
+u = int(input("uzunluk: "))
+g = int(input("genislik: "))
+print("alan:", alan(u,g))
+print("cevre:", cevre(u,g))
+
+
+print("\n*************global ve yerel(local) değişkenleri kullanma***************\n")
+
+def topla():
+    a = 5
+    b = 10
+    return (a + b)
+print(topla())
+# print(a)(error) bu degişkeni burda cagırmayız  çünkü bu dedişken  yerel (local) degişkendir 
+# bunu 2 şekilde çalışıta biliriz == print(a)
+
+print("\n****** 1 choice ******\n")
+def topla():
+    # a = 5
+    # b = 10
+    return (a + b)
+a = 5 # bu deişken artık global bir degişken oldu
+b = 10
+print(topla())
+print(a)
+print(b)
+
+print("\n****** 2 choice ******\n")
+# alt program
+def toplam():
+    global a # global a = 5 bu olmaz hatta alırız (invalid syntax) geçersiz sözdizimi
+    global b
+    a = 5
+    b = 10
+    return (a + b)
+# ana program 
+print(toplam())
+print(a)
+print(b)
+
+print("\n************** içerigi olmyan fonksiyon (psss)**************\n")
+# alt program
+def toplam():
+    global a 
+    global b
+    a = 5
+    b = 10
+    return (a + b)
+
+def carpma():
+    # pass
+    return (a * b)
+
+def bolem():
+    #pass
+    return (a / b)
+
+def cikarma():
+    #pass
+    return (a - b)
+# ana program 
+print(toplam())
+print(carpma())
+print(bolem())
+print(cikarma())
+print(a)
+print(b)
+
+
+print("\n************** fonksiyon kisatma (lambda)**************\n")
+
+# def dolar (TL):
+#     return (TL/41)
+
+dolar = lambda TL: TL/41
+
+TL = int(input("TL giriniz: "))
+print(TL,"Türk lirasi=",dolar(TL),"Dolar")
+
+print("\n❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️  Recursive (Özyinelemeli) Fonksiyon  ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ \n")
+#Kendi kendini çağıran fonksiyon
+#Bir problemi daha küçük parçalara böler
+#Base case (durdurma koşulu) olmalıdır, yoksa sonsuz döngü olur
+
+# alt perogram 
+def faktoriyel (n):
+    if n == 0:
+        return 1 # base case durdurma koşulu
+    else:
+        return n * faktoriyel(n-1)   
+# ana program 
+sayi = int(input("bir sayi giriniz: "))
+sonuc = faktoriyel(sayi)
+print(f"{sayi}! sayisinin sonucu= {sonuc} ")
+
+def ustel(a,b):
+    if b == 0 :
+        return 1 # base case ===> Eğer base case yoksa → sonsuz recursion → RecursionError
+    else: return a *ustel (a,b-1)
+
+a = int(input("taban girinizc: "))
+b = int (input("üssü giriniz: "))
+print(ustel(a,b))
+
+# pow()
+# Python’da pow() fonksiyonu üssü almak için kullanılır.
+print(pow(2, 3))  # 2^3 = 8
+print(pow(2, 3, 5))  # (2^3) % 5 = 8 % 5 = 3
+
+print("\n=========== Fonksiyon  tekarar =============\n")
+ 
+def selam():
+    isim = input("isim giriniz: ")
+    print(f"selam {isim} ❤️ ❤️ ❤️") # print("merhaba ")
+selam()
+
+# Kullanıcıdan sayıları alıp döndüren fonksiyon
+def hepsini_yaz():
+    a = int(input("sayi giriniz:"))
+    b = int(input("sayi giriniz: "))
+    return a,b  # İki sayıyı geri döndür
+
+## İşlem fonksiyonları
+def toplam(a, b):
+    return a + b # print(a + b)
+
+def carpma(a, b):
+    return a * b # print(a * b)
+
+def cikarma(a, b):
+    return a - b # print(a - b)
+
+# Ana program
+a, b = hepsini_yaz()
+print("toplam:",toplam(a,b))
+print("carpim:",carpma(a,b))
+print("cikarma:",cikarma(a,b))
+
+
+elveda = lambda: print(" ❤️ ❤️ ❤️ görüşmek üzere ❤️ ❤️ ❤️ ")
+elveda()
+
+
+
+
+
