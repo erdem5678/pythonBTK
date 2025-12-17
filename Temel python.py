@@ -730,4 +730,58 @@ string = 'ali{}veli'
 str3 = string.format(a)
 print(str3)
 
-print("\n===== string ters çevirme ====\n")
+print("\n===== string ters çevirme   ====\n")
+
+srt1 = 'btk'
+ters= srt1[::-1]
+ters1 = ''.join(reversed(srt1))
+ters2 = 'k'.join(reversed(srt1))
+ters3 = '.'.join(reversed(srt1))
+print(ters1)
+print(ters2)
+print(ters3)
+print(ters)
+
+print("\n===== string büyük küçük harfe çevirme   ====\n")
+küçük = 'bariş ERDEM'
+k = küçük.lower()
+b = küçük.upper()
+k_b = küçük.swapcase()
+başharf = küçük.capitalize()
+
+
+print(başharf)
+print(k_b)
+print(b)
+print(k)
+
+print("\n=====  bir string içindeki başka string nasil arariz   ====\n")
+# in - not in komutları ile denetim yaparız 
+eşitir1 = 'AT' in 'talat'
+eşitir2 = 'at' in 'talat'
+arama = 'as' not in 'selam'
+print(eşitir1)
+print(eşitir2)
+print(arama)
+
+print("\n====== örnek ======\n")
+veri = []
+kişi = input("kişi giriniz: ")
+str1 = input("isim girinzi...: ")
+
+if kişi in str1:
+    print("var")
+else:
+    print("yok")
+
+veri.append(kişi)
+print(veri)
+
+print("\n====== örnek ======\n")
+
+kelime = input("kelime giriniz: ")
+print(kelime,'nin tersi', kelime [::-1], 'dir')
+if kelime == kelime[::-1]:
+    print(kelime,'bir palindromdur')
+else:
+    print(kelime,'bir palindrom degildir')

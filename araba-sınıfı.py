@@ -4,7 +4,7 @@ class Araba:
         self.marka = marka
         self.model = model
         self.hiz = 0  # Başlangıç hızı 0
-    
+
     def hizlan(self, miktar):
         # Hızı artır
         if miktar <= 0:
