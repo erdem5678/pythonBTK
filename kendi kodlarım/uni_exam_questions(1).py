@@ -71,12 +71,12 @@ print("---soru 5---\n")
 # **Görev:** İki sayının çarpımını döndüren bir fonksiyon yazın. (5 * 8)
 # **Beklenen Çıktı:**
 # 40
-# def carpim(sayi1,sayi2):
-#     return sayi1*sayi2
-# sayi1 = int(input("sayi gir:"))
-# sayi2 = int(input("sayi gir:"))
-# sonuc = carpim(sayi1,sayi2)
-# print(sonuc)
+def carpim(sayi1,sayi2):
+    return sayi1*sayi2
+sayi1 = int(input("sayi gir:"))
+sayi2 = int(input("sayi gir:"))
+sonuc = carpim(sayi1,sayi2)
+print(sonuc)
 
 print("---soru 6---\n")
 

@@ -2,7 +2,7 @@
 
 print("\n************Hesap Sahibi: Ahmet, Güncel Bakiye: 1500 AZN**************\n")
 class BankAccount:
-    def __init__(self, account_holder, initial_balance=0):
+    def __init__(self, account_holder, initial_balance=0): 
         self.account_holder = account_holder
         self.balance = initial_balance          
 
@@ -29,7 +29,7 @@ class BankAccount:
 
 
 # çekme fonksiyonu
-    def cekme(self,amount):
+    def cekme(self,amount): #Withdraw money
         if amount <= 0:
             print("Hata: Geçersiz cekme miktar! Lütfen pozitif bir sayı girin.")
             return
@@ -38,7 +38,6 @@ class BankAccount:
             self.balance -= amount # bakiyeden çıkar
             print(f"{amount} Dolar çekildi.")
             print("iyi günler diileriz.....")
-
         else:
             print("Yetersiz bakiye veya geçersiz miktar.")
 
@@ -98,13 +97,18 @@ class Geometri:
      def __init__(self,genişlik,uzunluk):
         self.genişlik = genişlik
         self.uzunluk = uzunluk
+
+
 # Alan hesaplama 
      def alan_hesapla(self):
         return self.genişlik * self.uzunluk
+     
+
 #cevre hesaplama
      def cevre_hesapla(self):
         return 2 * (self.genişlik + self.uzunluk)   
      
+
 # kullancı girişi
 alan = int(input("Alan giriniz:"))
 cevre = int(input("Cevre giriniz:"))
